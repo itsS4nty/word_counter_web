@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-//@ts-ignore
-import { ReactComponent as CloseSVG } from '../../assets/icons/close.svg';
+import CloseSVG from '../svg/CloseSVG';
 
 const Tag = styled.div`
 	background-color: #f0f0f0;
@@ -12,7 +11,6 @@ const Tag = styled.div`
 	padding: 4px 12px;
 	display: inline-block;
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-	cursor: pointer;
 	position: relative;
 `;
 

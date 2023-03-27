@@ -39,14 +39,14 @@ const Input = styled.input`
 	}
 `;
 
-const AddBtn = styled.div`
-    background-color: green;
+const AddBtn = styled.div<{ disabled: boolean }>`
+    background-color: ${props => props.disabled ? '#a9d6a9' : 'green'};
     width: fit-content;
     height: 100%;
     padding: 0 12px;
     border-radius: 8px;
     color: white;
-    cursor: pointer;
+    cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,11 +56,8 @@ const WordsInput = () => {
     const main = useContext(MainContext)!;
     const [inputValue, setInputValue] = useState<string>('');
     const handleOnClick = () => {
-        if(!inputValue.trim()) {
-            alert('Pon palabras');
-            return;
-        }
-        main.word_count_sdk.setWords(inputValue.split(/\s|,/));
+        if(!inputValue.trim()) return;
+        main.word_count_sdk.setWords(inputValue.trim().split(/\s+|,/));
         setInputValue('');
     }
 	return (
@@ -69,7 +66,7 @@ const WordsInput = () => {
                 <Label htmlFor='word_input'>Add words one by one or separated by space or comma</Label>
                 <Input type='text' id='word_input' value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
             </InputContainer>
-            <AddBtn onClick={handleOnClick}>Add</AddBtn>
+            <AddBtn onClick={handleOnClick} disabled={!inputValue.trim().length}>Add</AddBtn>
         </Container>
     );
 };

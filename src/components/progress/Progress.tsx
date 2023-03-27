@@ -2,9 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import MainContext from '../../context/main';
 import { IWordCounterSDKListeners } from 'word_counter_sdk_lib/dist/interfaces/IWordCounterSDKListeners';
 import styled, { keyframes } from 'styled-components';
-//@ts-ignore
-import { ReactComponent as TickSVG } from '../../assets/icons/tick.svg';
 import { View } from '../../enums/view';
+import TickSVG from '../svg/TickSVG';
 
 const Container = styled.div`
 	width: 100%;
@@ -22,12 +21,12 @@ const InfoContainer = styled.div`
 	gap: 12px;
 `;
 
-const Text = styled.span<{ loading: boolean }>`
+const Text = styled.span<{ isLoading: boolean }>`
 	font-size: 36px;
 	color: #333;
 
 	${(props) =>
-		!props.loading && `
+		!props.isLoading && `
             .words_found {
                 color: #00804d;
             }
@@ -103,7 +102,7 @@ const _Progress = (props: _ProgressProps) => {
 	return (
 		<Container>
 			<InfoContainer>
-				<Text loading={loading}>
+				<Text isLoading={loading}>
 					<span className='words_found'>{lengths}</span> words found!
 				</Text>
 				{loading ? (

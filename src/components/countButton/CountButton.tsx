@@ -17,7 +17,6 @@ const Button = styled.button`
 const _CountButton = () => {
 	const main = useContext(MainContext)!;
 	const handleOnClick = () => {
-		main.word_count_sdk.setFile('/books/dracula.txt');
 		main.word_count_sdk.findWords();
 	};
 	return <Button onClick={() => handleOnClick()}>Count!</Button>;
