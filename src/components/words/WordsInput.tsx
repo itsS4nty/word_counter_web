@@ -19,7 +19,7 @@ const Label = styled.label`
     font-size: 12px;
     color: gray;
     position: absolute;
-    top: -38px;
+    top: -46px;
     margin: 8px;
 `;
 
