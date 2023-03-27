@@ -3,10 +3,16 @@ import MainContext from '../../context/main';
 
 const _CountButton = () => {
     const main = useContext(MainContext)!;
+    const handleOnClick = () => {
+        main.word_count_sdk.setFile("/books/dracula.txt");
+        main.word_count_sdk.addWord('awakened');
+        main.word_count_sdk.setWords(['morris']);
+        main.word_count_sdk.findWords();
+    }
 	return (
 		<div>
 			_CountButton
-			<button onClick={() => main.word_count_sdk.findWords()}>Test context</button>
+			<button onClick={() => handleOnClick()}>Test context</button>
 		</div>  
 	);
 };
