@@ -1,46 +1,35 @@
-# Getting Started with Create React App
+# FrontEnd
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I have decided to use ReactJS and TypeScript to do the FrontEnd project.
 
-## Available Scripts
+## Usage
 
-In the project directory, you can run:
+As I mentioned above, you have to run the command
+```
+npm i
+```
+to install all the dependencies **(you have to do it after installing the word_counter_sdk_lib dependencies)**.
 
-### `npm start`
+To run the frontend, run this command:
+```
+npm start
+```
+it will run at http://localhost:3000/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## File structure
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I have followed the following structure:
 
-### `npm test`
+- src
+  - **components**: This is where all the components of the application are located. The components are divided into folders according to their type or function in the application.
+  - **context**: This is where the application context is initialised and the logic for sharing information between components is defined.
+  - **enums**: This is where you find the enums needed for the different parts of the project, such as file upload states.
+  - **pages**: This is where the main page of the application is located.
+  - **services**: Here you will find the main service of the application, which is responsible for the text processing logic.
+  - **types**: Here are the different types of data used in the application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## General information
 
-### `npm run build`
+Upon execution, it can be observed that there are some warnings, I am aware of this. This is because in the file `src/components/select/SelectBook.tsx` there is commented code that, if uncommented, can provide an additional functionality.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+It's likely that when you click the 'Count!' button, you won't have time to see the spinner or the progress, as depending on the words being searched, it can be quite fast. To be able to see this, from the 'network' section of the browser console, you can simulate a 'slow 3G connection,' and then you will be able to see the progress and the loading spinner.
