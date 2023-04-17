@@ -4,7 +4,7 @@ I have decided to use ReactJS and TypeScript to do the FrontEnd project.
 
 ## Usage
 
-As I mentioned above, you have to run the command
+You have to run the command
 ```
 npm i
 ```
